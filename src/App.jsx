@@ -232,7 +232,7 @@ export default function App() {
         <p className="muted">Se muestran las preguntas cuya última respuesta registrada fue incorrecta.</p>
         {wrongQuestions.length ? <div className="error-list">{wrongQuestions.map(q => <article className="error-item" key={q.id}>
           <span className="topic-tag">{q.topic}</span><h3>{q.question}</h3><p><strong>Correcta:</strong> {q.options[Number(q.correct)]}</p><p>{q.explanation}</p>
-          <button className="button secondary small" onClick={() => { changeTopic(q.topic); setIndex(Math.max(0, questions.filter(x => x.topic === q.topic).findIndex(x => String(x.id) === String(q.id))); changeScreen('practice'); }}>Practicar este tema</button>
+          <button className="button secondary small" onClick={() => { changeTopic(q.topic); setIndex(Math.max(0, questions.filter(x => x.topic === q.topic).findIndex(x => String(x.id) === String(q.id)))); changeScreen('practice'); }}>Practicar este tema</button>
         </article>)}</div> : <div className="empty-state"><h3>¡Todavía no hay fallos!</h3><p>Cuando respondas preguntas, aparecerán aquí las que necesites repasar.</p></div>}
       </section>}
 
